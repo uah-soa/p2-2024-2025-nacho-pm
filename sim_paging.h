@@ -25,7 +25,7 @@ typedef struct
     //       a mechanism that, in reality, would be
     //       supported by the hardware.
 }
-spage;
+spage; /* THIS IS THE PAGE MAP TABLE (PGT) -> which contains frames */ 
 
 // Structure that holds the state of a frame
 // (the hardware doesn't know anything about this struct)
@@ -37,7 +37,7 @@ typedef struct
     // For managing free frames and for FIFO and FIFO 2nd ch.
     int next;           // Next frame in the list
 }
-sframe;
+sframe; /* LIST OF FRAMES */
 
 // Struture that contains the state of the whole system
 
@@ -64,7 +64,7 @@ typedef struct
     int numillegalrefs;    // References out of range
     char detailed;         // 1 = show step-by-step information
 }
-ssystem;
+ssystem; /* ACCESS TO ALL DATA STRUCTURES -> concretely to the PGT (page map table) */
 
 // Function that initialises the tables
 
